@@ -11,7 +11,7 @@ class Films extends Component {
     }
 
     componentDidMount() {
-        let url = 'https://ghibliapi.herokuapp.com/films' + this.props.match.param.id;
+        let url = 'https://ghibliapi.herokuapp.com/films/' + this.props.match.params.id;
         fetch(url)
         .then((res) => {
             return res.json();        

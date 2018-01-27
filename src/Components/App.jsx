@@ -33,6 +33,7 @@ class App extends Component {
               <Route exact path="/films" component={Films} />
               <Route exact path="/people" component={People} />
               <Route exact path="/people/:id" component={SinglePerson} />
+              <Route exact path="/films/:id" component={SingleFilm} />
             </Switch>
           </div>
         </div>

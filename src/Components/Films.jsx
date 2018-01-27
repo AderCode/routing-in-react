@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 class Films extends Component {
     constructor(props) {
@@ -35,8 +36,8 @@ class Films extends Component {
                 <div className="card-body">
                   <h5 className="card-title">{film.title}</h5>
                   <p className="card-text">{film.description}</p>
-                  <p>{film.people}</p>
-                </div>
+                  <Link to={"/films/" + film.id}>View This Person</Link>
+                  </div>
               </div>
             );
           });

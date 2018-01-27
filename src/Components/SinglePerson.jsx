@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 
-class People extends Component {
+class SinglePerson extends Component {
     constructor(props) {
         super(props);
 
@@ -11,7 +11,7 @@ class People extends Component {
     }
 
     componentDidMount() {
-        let url = 'https://ghibliapi.herokuapp.com/people/' + this.props.match.param.id;
+        let url = 'https://ghibliapi.herokuapp.com/people/' + this.props.match.params.id;
         fetch(url)
         .then((res) => {
             return res.json();        
@@ -42,4 +42,4 @@ class People extends Component {
         }
 }
 
-export default People;
+export default SinglePerson;
