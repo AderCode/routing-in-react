@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 
-class SinglePerson extends Component {
+class PersonMoreInfo extends Component {
     constructor(props) {
         super(props);
 
@@ -11,7 +11,7 @@ class SinglePerson extends Component {
     }
 
     componentDidMount() {
-        let url = 'https://ghibliapi.herokuapp.com/people/' + this.props.match.params.id;
+        let url = `https://ghibliapi.herokuapp.com/people/${this.props.match.params.id}`;
         fetch(url)
         .then((res) => {
             return res.json();        
@@ -22,18 +22,21 @@ class SinglePerson extends Component {
     render() {
             return (
               <div
-                className="card col-sm-5 my-2 mx-auto d-flex justify-content-center"
+                className="card col-sm-5 my-2 mx-auto d-flex justify-content-center mb-5"
                 key={this.state.ghibliPerson.id}
               >
                 <img
-                  className="card-img-top p-1"
+                  className="card-img-top mt-3 border border-dark"
                   src={require(`../srcImages/movie-banner.jpg`)}
                   alt="Movie Banner"
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Name: {this.state.ghibliPerson.name}</h5>
+                  <h5 className="card-title"><b><i>{this.state.ghibliPerson.name}</i></b></h5>
                   <p className="card-text">
-                    Age: {this.state.ghibliPerson.age}
+                    <b>Age:</b> {this.state.ghibliPerson.age}<br />
+                    <b>Gender:</b> {this.state.ghibliPerson.gender}<br />
+                    <b>Eye Color</b> {this.state.ghibliPerson.eye_color}<br />
+                    <b>Hair Color</b> {this.state.ghibliPerson.hair_color}<br />
                     <br />      
                   </p>
                 </div>
@@ -42,4 +45,4 @@ class SinglePerson extends Component {
         }
 }
 
-export default SinglePerson;
+export default PersonMoreInfo;

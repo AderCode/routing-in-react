@@ -29,14 +29,14 @@ class Films extends Component {
               className="card col-sm-5 my-2 mx-auto d-flex justify-content-center"
               >
                 <img
-                  className="card-img-top"
+                  className="card-img-top mt-3 border border-dark"
                   src={require(`../srcImages/movie-banner.jpg`)}
                   alt="Movie Banner"
                 />
                 <div className="card-body">
                   <h5 className="card-title">{film.title}</h5>
                   <p className="card-text">{film.description}</p>
-                  <Link to={"/films/" + film.id}>View This Person</Link>
+                  <Link to={`/films/${film.id}`}>More Info</Link>
                   </div>
               </div>
             );

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 class People extends Component {
     constructor(props) {
@@ -27,16 +28,16 @@ class People extends Component {
                 key={person.id}
               >
                 <img
-                  className="card-img-top p-1"
+                  className="card-img-top mt-3 border border-dark"
                   src={require(`../srcImages/movie-banner.jpg`)}
                   alt="Movie Banner"
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Name: {person.name}</h5>
+                  <h5 className="card-title"><b><i>{person.name}</i></b></h5>
                   <p className="card-text">
-                    Age: {person.age}
+                    <b>Age:</b> {person.age}
                     <br />
-                    <Link to={"/people/" + person.id}>View This Person</Link>
+                    <Link to={`/people/${person.id}`}>More Info</Link>
       
                   </p>
                 </div>
